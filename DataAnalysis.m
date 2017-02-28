@@ -57,6 +57,8 @@ imgSize = 32; % EIT image is 32x32 pixels
                        ReconState = data.measurement.MeasurementState.ReconState; % when more then 6 are failing 
                        MeasState = data.measurement.MeasurementState.MeasState; % when device is compensationg 
                        ElectrodeQuality = data.measurement.ElectrodeQuality; 
+                       
+                       mkdir([filePath,'\','ElectrodeQuality']); % creat sub-folder 
                        save([filePath,'\ElectrodeQuality\ElectrodeQuality_',zriFiles(iFiles).name(1:end-4),'.mat'],'ElectrodeQuality','ReconState','MeasState'); 
                         
                        % TODO maybe write to text files 
